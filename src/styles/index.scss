@@ -1,0 +1,115 @@
+@import "./variables.scss";
+
+/* start
+CSS custom reset
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+/* end
+CSS custom reset
+*/
+
+:root {
+  --main-background-color: #{$neutralColor};
+  --card-background-color: #{$primaryColor};
+  --secondary-text-color: #{$secondaryColor};
+  --primary-text-color: #{$accentColor};
+}
+
+// font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  // background-color: $primaryBackgroundColor;
+  background-color: var(--main-background-color);
+  color: var(--primary-text-color);
+  // color: red;
+}
+
+// c6e7ff
+// D4F6FF
+// FBFBFB
+// FFDDAE
+
+.container {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: 50px auto 50px;
+  grid-template-columns: auto;
+  grid-template-areas: "Header" "Main" "Footer";
+}
+
+header {
+  grid-area: Header;
+  // background-color: red;
+}
+
+main {
+  grid-area: Main;
+}
+
+footer {
+  grid-area: Footer;
+}
