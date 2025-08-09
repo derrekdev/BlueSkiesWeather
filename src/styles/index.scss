@@ -72,13 +72,6 @@ h6 {
 CSS custom reset
 */
 
-:root {
-  --main-background-color: #{$neutralColor};
-  --card-background-color: #{$primaryColor};
-  --secondary-text-color: #{$secondaryColor};
-  --primary-text-color: #{$accentColor};
-}
-
 // font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

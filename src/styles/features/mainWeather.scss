@@ -1,0 +1,23 @@
+.weather-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1;
+  text-align: center;
+
+  .location {
+    font-size: 3rem;
+  }
+
+  .temp {
+    font-size: 8rem;
+    sup {
+      font-size: 2rem;
+    }
+  }
+
+  .condition-text {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+}

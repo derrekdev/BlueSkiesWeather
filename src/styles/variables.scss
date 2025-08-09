@@ -22,3 +22,11 @@ $neutralColor: #00a9ff;
 // 89CFF3
 // A0E9FF
 // CDF5FD
+
+:root {
+  --main-background-color: #{$neutralColor};
+  --card-background-color: #{$primaryColor};
+  --card-header-background-color: #{$secondaryColor};
+  --secondary-text-color: #{$secondaryColor};
+  --primary-text-color: #{$accentColor};
+}

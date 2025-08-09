@@ -1,5 +1,5 @@
 export type WeatherApiResponseType = {
-  location: Location;
+  location: LocationType;
   current: CurrentType;
   forecast: ForecastType;
 };

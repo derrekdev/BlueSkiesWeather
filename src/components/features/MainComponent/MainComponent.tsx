@@ -1,8 +1,11 @@
 import { useCallback } from "react";
-import "../../../styles/mainComponent.scss";
-import Card from "../../ui/card";
+import { useWeatherData } from "../../../store/storeWeatherData";
+import "../../../styles/features/mainComponent.scss";
+import MainWeather from "../MainWeather/MainWeather";
 
 export default function MainComponent() {
+  const addWeatherData = useWeatherData((state) => state.addWeatherData);
+
   const fetchWeatherData = useCallback(() => {
     fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=32a55bd6f3a34377bb074242250808&q=Dumaguete&days=1&aqi=no&alerts=no`
@@ -11,7 +14,8 @@ export default function MainComponent() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        addWeatherData(data);
+        // console.log(data);
       });
   }, []);
 
@@ -31,8 +35,9 @@ export default function MainComponent() {
   return (
     <main>
       <div className="current-container">
-        <Card />
+        <MainWeather />
       </div>
+      <div className="sub-container"></div>
     </main>
   );
 }
