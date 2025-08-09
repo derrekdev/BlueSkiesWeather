@@ -1,0 +1,32 @@
+.search {
+  display: flex;
+  justify-content: center;
+
+  input {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-style: solid;
+    border-right: none;
+    padding: 5px 15px;
+    background-color: var(--search-input-background-color);
+    border-color: var(--search-button-border-color);
+  }
+  input:focus,
+  input:active {
+    // border: none;
+    outline: none;
+  }
+  button {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 5px 15px;
+    background-color: var(--search-button-background-color);
+    color: var(--search-button-text-color);
+    border-color: var(--search-button-border-color);
+    border-style: solid;
+  }
+
+  button:hover {
+    background-color: var(--search-button-background-color-hover);
+  }
+}

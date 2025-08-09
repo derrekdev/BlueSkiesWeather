@@ -27,6 +27,11 @@ $neutralColor: #00a9ff;
   --main-background-color: #{$neutralColor};
   --card-background-color: #{$primaryColor};
   --card-header-background-color: #{$secondaryColor};
-  --secondary-text-color: #{$secondaryColor};
   --primary-text-color: #{$accentColor};
+  --secondary-text-color: #{$secondaryColor};
+  --search-input-background-color: #{$accentColor};
+  --search-button-background-color: #{$secondaryColor};
+  --search-button-background-color-hover: #{$accentColor};
+  --search-button-text-color: #{$neutralColor};
+  --search-button-border-color: #{$secondaryColor};
 }
