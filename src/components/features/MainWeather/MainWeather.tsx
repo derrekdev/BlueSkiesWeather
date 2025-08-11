@@ -53,7 +53,7 @@ export default function MainWeather() {
   console.log("getCurrentWeather", weatherData);
 
   return (
-    <div>
+    <>
       <Card>
         <div className="weather-block">
           {locationWeather.name && (
@@ -72,6 +72,6 @@ export default function MainWeather() {
           )}
         </div>
       </Card>
-    </div>
+    </>
   );
 }
