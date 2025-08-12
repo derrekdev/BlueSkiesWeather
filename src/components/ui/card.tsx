@@ -7,6 +7,7 @@ type CardType = {
   cardHeight?: number;
   footer?: ReactNode;
   children?: ReactNode;
+  className?: string;
 };
 
 export default function Card({
@@ -15,6 +16,7 @@ export default function Card({
   cardHeight = 400,
   footer,
   children,
+  className,
 }: CardType) {
   let cardStyle: any = [];
 
@@ -33,7 +35,7 @@ export default function Card({
   }
 
   return (
-    <div className="card" style={cardStyle}>
+    <div className={`card ${className}`} style={className ? {} : cardStyle}>
       {title && (
         <div className="card-header">
           <h2>{title}</h2>

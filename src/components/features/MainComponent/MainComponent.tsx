@@ -4,6 +4,7 @@ import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/mainComponent.scss";
 import type { WeatherApiResponseType } from "../../../types/weather";
 import MainWeather from "../MainWeather/MainWeather";
+import SubWeather from "../SubWeather/SubWeather";
 
 export default function MainComponent() {
   const addWeatherData = useWeatherData((state) => state.addWeatherData);
@@ -62,7 +63,9 @@ export default function MainComponent() {
       <div className="current-container">
         <MainWeather />
       </div>
-      <div className="sub-container"></div>
+      <div className="sub-container">
+        <SubWeather />
+      </div>
     </main>
   );
 }

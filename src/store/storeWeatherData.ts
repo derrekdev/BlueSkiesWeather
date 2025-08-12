@@ -7,7 +7,7 @@ type WeatherDataType = {
   getCurrentWeather: () => Partial<CurrentType>;
 };
 
-export const useWeatherData = create<WeatherDataType>((set, get) => ({
+export const useWeatherData = create<WeatherDataType>((set) => ({
   weatherData: { location: [], current: [], forecast: [] },
   // weatherData: [],
   addWeatherData: (weatherDataValue: WeatherApiResponseType) =>
