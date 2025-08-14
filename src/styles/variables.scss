@@ -34,4 +34,6 @@ $neutralColor: #00a9ff;
   --search-button-background-color-hover: #{$accentColor};
   --search-button-text-color: #{$neutralColor};
   --search-button-border-color: #{$secondaryColor};
+  --button-color: #{$secondaryColor};
+  --button-color-hover: #{$primaryColor};
 }

@@ -63,9 +63,9 @@ export default function MainComponent() {
       <div className="current-container">
         <MainWeather />
       </div>
-      <div className="sub-container">
-        <SubWeather />
-      </div>
+      {/* <div className="sub-container"> */}
+      <SubWeather />
+      {/* </div> */}
     </main>
   );
 }

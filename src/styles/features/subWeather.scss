@@ -1,18 +1,42 @@
-.min-card {
-  width: 100px;
-  height: 150px;
-  border-radius: 10px;
+.sub-container {
+  width: 100dvw;
+  overflow: auto;
+  scroll-behavior: smooth;
 
-  .card-content {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .sub-weather-container {
+    display: inline-flex;
+    gap: 10px;
+    overflow: visible;
 
-    .sub-weather-image {
-      height: 40px;
-      width: 40px;
+    .min-card {
+      width: 100px;
+      height: 150px;
+      border-radius: 10px;
+
+      .card-content {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .sub-weather-image {
+          height: 40px;
+          width: 40px;
+        }
+      }
     }
+  }
+}
+
+.sub-weather-button-container {
+  width: 100%;
+  position: absolute;
+  padding-top: 20px;
+  text-align: center;
+  .sub-weather-button-block {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
   }
 }

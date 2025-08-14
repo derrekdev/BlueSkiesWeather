@@ -1,0 +1,12 @@
+button {
+  // padding: 5px;
+  border: none;
+  background-color: transparent;
+  color: var(--button-color);
+  // font-size: 1rem;
+
+  :hover {
+    color: var(--button-color-hover);
+    // scale: 150%;
+  }
+}
