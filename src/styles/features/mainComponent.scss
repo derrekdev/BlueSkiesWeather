@@ -6,12 +6,17 @@
   justify-content: center;
 }
 
-.sub-container {
-  // width: 100dvw;
-  // display: block;
-  // overflow: hidden;
+// .sub-container {
+//   width: 100dvw;
+//   display: block;
+//   // overflow: hidden;
 
-  // flex-wrap: wrap;
-  // overflow: hidden;
-  // overflow-x: scroll;
+//   // flex-wrap: wrap;
+//   // overflow: hidden;
+//   // overflow-x: scroll;
+// }
+
+.min-container {
+  width: 100dvw;
+  padding: 0 20px;
 }

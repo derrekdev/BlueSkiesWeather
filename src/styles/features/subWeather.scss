@@ -1,17 +1,34 @@
 .sub-container {
-  width: 100dvw;
+  // width: 100dvw;
   overflow: auto;
   scroll-behavior: smooth;
 
   .sub-weather-container {
     display: inline-flex;
+    align-items: center;
     gap: 10px;
     overflow: visible;
 
     .min-card {
       width: 100px;
       height: 150px;
-      border-radius: 10px;
+      border-radius: 20px;
+
+      &.highlight {
+        width: 150px;
+        height: 200px;
+        border-radius: 35px;
+        background-color: var(--card-header-secondary-background-color);
+        color: var(--card-header-secondary-text-color);
+        font-size: 1.5rem;
+        .card-content {
+          gap: 5px;
+          .sub-weather-image {
+            height: 50px;
+            width: 50px;
+          }
+        }
+      }
 
       .card-content {
         padding: 5px;

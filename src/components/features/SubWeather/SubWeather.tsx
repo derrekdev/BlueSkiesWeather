@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { addSeconds, format, isWithinInterval } from "date-fns";
 import { useRef } from "react";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/subWeather.scss";
@@ -12,12 +12,18 @@ export default function SubWeather() {
   const weatherData: WeatherApiResponseType = useWeatherData(
     (state) => state.weatherData
   );
-  const forecastWeather = weatherData.forecast.forecastday;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const forecastWeather = weatherData.forecast.forecastday;
+  const currentWeather = weatherData.current;
+  const currentDateTime = currentWeather.last_updated;
   const SCROLL_VALUE = 500;
 
-  console.log("forecastWeather length", forecastWeather);
-  console.log("forecastWeather", forecastWeather);
+  console.log("forecast Weather", forecastWeather);
+  console.log("current Weather", currentWeather);
+
+  // console.log("current date time", currentDateTime);
+
+  const getTime = new Date(currentDateTime);
 
   const handleScroll = (direction: "left" | "right" = "left") => {
     if (scrollContainerRef.current) {
@@ -44,16 +50,35 @@ export default function SubWeather() {
             forecastWeather.map((weatherData) => {
               console.log("data", weatherData);
 
-              return weatherData.hour.map((hourlyData, i) => (
-                <Card key={i} className="min-card">
-                  <span>{format(new Date(hourlyData.time), "hh:mm a")}</span>
-                  <img
-                    src={hourlyData.condition.icon}
-                    className="sub-weather-image"
-                  />
-                  <span>{hourlyData.heatindex_c}</span>
-                </Card>
-              ));
+              return weatherData.hour.map((hourlyData, i) => {
+                const isWithinRange = isWithinInterval(getTime, {
+                  start: new Date(hourlyData.time),
+                  end: addSeconds(new Date(hourlyData.time), 3599),
+                });
+                // console.log(
+                //   "time diffrence = ",
+                //   isWithinRange,
+                //   " == current === ",
+                //   getTime,
+                //   " == start === ",
+                //   new Date(hourlyData.time),
+                //   " == end === ",
+                //   addSeconds(new Date(hourlyData.time), 3599)
+                // );
+                return (
+                  <Card
+                    key={i}
+                    className={`min-card ${isWithinRange ? "highlight" : ""}`}
+                  >
+                    <span>{format(new Date(hourlyData.time), "hh:mm a")}</span>
+                    <img
+                      src={hourlyData.condition.icon}
+                      className="sub-weather-image"
+                    />
+                    <span>{hourlyData.heatindex_c}</span>
+                  </Card>
+                );
+              });
             })}
         </div>
       </div>

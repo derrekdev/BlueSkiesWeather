@@ -101,6 +101,7 @@ header {
 
 main {
   grid-area: Main;
+  box-sizing: content-box;
   // width: 100dvw;
 }
 
