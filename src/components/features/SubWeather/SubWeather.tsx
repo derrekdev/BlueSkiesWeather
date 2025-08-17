@@ -75,7 +75,10 @@ export default function SubWeather() {
                       src={hourlyData.condition.icon}
                       className="sub-weather-image"
                     />
-                    <span>{hourlyData.heatindex_c}</span>
+                    <span>
+                      {hourlyData.heatindex_c}
+                      &deg;C
+                    </span>
                   </Card>
                 );
               });
