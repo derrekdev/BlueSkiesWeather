@@ -94,6 +94,15 @@ body {
   grid-template-areas: "Header" "Main" "Footer";
 }
 
+.about-container {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
 header {
   grid-area: Header;
   // background-color: red;
