@@ -4,10 +4,34 @@
   max-width: 1200px;
   width: 100%;
   background-color: var(--card-background-color);
-  padding: 20px;
+  padding: 50px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 
   h1 {
     font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .link-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    &.item-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    &:hover {
+      color: var(--secondary-text-color);
+    }
   }
 }

@@ -1,3 +1,12 @@
+import AboutContainer from "../components/features/AboutContainer/AboutContainer";
+
 export default function About() {
-  return <div>About Test</div>;
+  return (
+    <>
+      <div className="about-container">
+        <AboutContainer />
+      </div>
+      {/* <Footer /> */}
+    </>
+  );
 }
