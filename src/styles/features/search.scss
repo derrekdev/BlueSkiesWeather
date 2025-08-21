@@ -2,7 +2,14 @@
   display: flex;
   justify-content: center;
 
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   input {
+    max-width: 200px;
+    width: 100%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-style: solid;
@@ -19,7 +26,8 @@
   button {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 5px 15px;
+    // padding: 5px 10px 15px;
+    padding: 5px 15px 5px 10px;
     background-color: var(--search-button-background-color);
     color: var(--search-button-text-color);
     border-color: var(--search-button-border-color);

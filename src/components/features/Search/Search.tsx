@@ -3,6 +3,7 @@ import { apiWeather } from "../../../services/apiWeather";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/search.scss";
 import type { WeatherApiResponseType } from "../../../types/weather";
+import SearchIcon from "../../ui/icons/SearchIcon";
 
 export default function Search() {
   const refSearchValue = useRef<HTMLInputElement>(null);
@@ -23,8 +24,10 @@ export default function Search() {
   return (
     <div className="search">
       <form onSubmit={handleSearch}>
-        <input type="search" ref={refSearchValue} />
-        <button type="submit">Search</button>
+        <input name="searchPlace" type="search" ref={refSearchValue} />
+        <button type="submit">
+          <SearchIcon strokeWidth={1} width={20} height={20} />
+        </button>
       </form>
     </div>
   );
