@@ -35,7 +35,10 @@ export default function Card({
   }
 
   return (
-    <div className={`card ${className}`} style={className ? {} : cardStyle}>
+    <div
+      className={`card ${className ?? ""}`}
+      style={className ? {} : cardStyle}
+    >
       {title && (
         <div className="card-header">
           <h2>{title}</h2>

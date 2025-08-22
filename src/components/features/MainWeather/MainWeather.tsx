@@ -54,7 +54,7 @@ export default function MainWeather() {
 
   return (
     <>
-      <Card>
+      <Card className="main-weather-card">
         <div className="weather-block">
           {locationWeather.name && (
             <span className="location">{locationWeather.name}</span>

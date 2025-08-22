@@ -21,3 +21,29 @@
     text-transform: capitalize;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .main-weather-card.card {
+    height: 200px;
+    max-width: 250px;
+    width: 100%;
+    grid-template-rows: 0.5fr 5fr 0.5fr;
+    border-radius: 20px;
+
+    .card-content {
+      padding: 0 10px;
+    }
+  }
+  .weather-block {
+    .location {
+      font-size: 2rem;
+    }
+
+    .temp {
+      font-size: 4.5rem;
+      sup {
+        font-size: 1rem;
+      }
+    }
+  }
+}

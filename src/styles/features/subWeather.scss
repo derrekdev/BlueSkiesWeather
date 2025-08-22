@@ -58,3 +58,26 @@
     gap: 100px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .sub-container {
+    .sub-weather-container {
+      .min-card {
+        width: 80px;
+        height: 120px;
+
+        &.highlight {
+          width: 100px;
+          height: 150px;
+          border-radius: 25px;
+        }
+
+        .card-content {
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
