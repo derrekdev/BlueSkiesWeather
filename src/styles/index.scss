@@ -118,6 +118,12 @@ footer {
   grid-area: Footer;
 }
 
+@media only screen and (max-width: 768px) {
+  .about-container {
+    height: 100%;
+  }
+}
+
 @media only screen and (max-width: 640px) {
   .hide-mobile {
     display: none !important;
