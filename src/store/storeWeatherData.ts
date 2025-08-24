@@ -1,11 +1,6 @@
 import { create } from "zustand";
-import type { CurrentType, WeatherApiResponseType } from "../types/weather";
-
-type WeatherDataType = {
-  weatherData: WeatherApiResponseType | unknown | any;
-  addWeatherData: (weatherDataValue: WeatherApiResponseType) => void;
-  getCurrentWeather: () => Partial<CurrentType>;
-};
+import type { WeatherDataType } from "../types/store";
+import type { WeatherApiResponseType } from "../types/weather";
 
 export const useWeatherData = create<WeatherDataType>((set) => ({
   weatherData: { location: [], current: [], forecast: [] },
