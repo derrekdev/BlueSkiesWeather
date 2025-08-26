@@ -12,4 +12,9 @@ export const useLoading = create<LoadingType>((set) => ({
       isLoading: false,
     }));
   },
+  loadingStatus: () => {
+    set((state: any) => {
+      return state.isLoading;
+    });
+  },
 }));

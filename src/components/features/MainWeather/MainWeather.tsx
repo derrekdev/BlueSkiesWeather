@@ -1,12 +1,15 @@
+import { useLoading } from "../../../store/storeLoading";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/mainWeather.scss";
 import type { WeatherApiResponseType } from "../../../types/weather";
 import Card from "../../ui/card";
+import LoadingCard from "../../ui/loadingCard";
 
 export default function MainWeather() {
   const weatherData: WeatherApiResponseType = useWeatherData(
     (state) => state.weatherData
   );
+  const isLoading = useLoading((state) => state.isLoading);
 
   const currentWeather = weatherData.current;
   const locationWeather = weatherData.location;
@@ -50,28 +53,34 @@ export default function MainWeather() {
   //   console.log("lat effect", lat);
   // }, []);
 
-  console.log("getCurrentWeather", weatherData);
+  // console.log("getCurrentWeather", weatherData);
+
+  console.log("isLoading", isLoading);
 
   return (
     <>
-      <Card className="main-weather-card">
-        <div className="weather-block">
-          {locationWeather.name && (
-            <span className="location">{locationWeather.name}</span>
-          )}
-          {currentWeather.heatindex_c && (
-            <span className="temp">
-              {currentWeather.temp_c}
-              <sup>&deg;C</sup>
-            </span>
-          )}
-          {currentWeather.condition?.text && (
-            <span className="condition-text">
-              {currentWeather.condition?.text}
-            </span>
-          )}
-        </div>
-      </Card>
+      {isLoading ? (
+        <LoadingCard />
+      ) : (
+        <Card className="main-weather-card">
+          <div className="weather-block">
+            {locationWeather.name && (
+              <span className="location">{locationWeather.name}</span>
+            )}
+            {currentWeather.heatindex_c && (
+              <span className="temp">
+                {currentWeather.temp_c}
+                <sup>&deg;C</sup>
+              </span>
+            )}
+            {currentWeather.condition?.text && (
+              <span className="condition-text">
+                {currentWeather.condition?.text}
+              </span>
+            )}
+          </div>
+        </Card>
+      )}
     </>
   );
 }

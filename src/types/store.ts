@@ -10,4 +10,5 @@ export type LoadingType = {
   isLoading: boolean;
   openLoad: () => void;
   closeLoad: () => void;
+  loadingStatus: () => void;
 };

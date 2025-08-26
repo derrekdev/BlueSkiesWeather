@@ -18,8 +18,8 @@ export default function SubWeather() {
   const currentDateTime = currentWeather.last_updated;
   const SCROLL_VALUE = 500;
 
-  console.log("forecast Weather", forecastWeather);
-  console.log("current Weather", currentWeather);
+  // console.log("forecast Weather", forecastWeather);
+  // console.log("current Weather", currentWeather);
 
   // console.log("current date time", currentDateTime);
 
@@ -48,7 +48,7 @@ export default function SubWeather() {
         <div className="sub-weather-container" id="subWeatherContainer">
           {forecastWeather &&
             forecastWeather.map((weatherData) => {
-              console.log("data", weatherData);
+              // console.log("data", weatherData);
 
               return weatherData.hour.map((hourlyData, i) => {
                 const isWithinRange = isWithinInterval(getTime, {
