@@ -40,12 +40,15 @@ export default function MainComponent() {
 
   const fetchWeatherData = useCallback(() => {
     openLoad();
+    // for loading test
+    // setTimeout(() => {
     getWeatherData()
       // .then(() => {
       //   openLoad();
       // })
       .then((data: WeatherApiResponseType) => {
         addWeatherData(data);
+
         // console.log("weather data", data);
       })
       .catch((error) => {
@@ -54,6 +57,8 @@ export default function MainComponent() {
       .finally(() => {
         closeLoad();
       });
+    // for loading test
+    // }, 5000);
   }, []);
 
   fetchWeatherData();

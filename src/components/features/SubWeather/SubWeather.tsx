@@ -1,5 +1,6 @@
 import { addSeconds, format, isWithinInterval } from "date-fns";
 import { useRef } from "react";
+import { useLoading } from "../../../store/storeLoading";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/subWeather.scss";
 import type { WeatherApiResponseType } from "../../../types/weather";
@@ -7,11 +8,13 @@ import Button from "../../ui/button";
 import Card from "../../ui/card";
 import ArrowLeft from "../../ui/icons/ArrowLeft";
 import ArrowRight from "../../ui/icons/ArrowRight";
+import LoadingCard from "../../ui/loadingCard";
 
 export default function SubWeather() {
   const weatherData: WeatherApiResponseType = useWeatherData(
     (state) => state.weatherData
   );
+  const isLoading = useLoading((state) => state.isLoading);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const forecastWeather = weatherData.forecast.forecastday;
   const currentWeather = weatherData.current;
@@ -42,11 +45,20 @@ export default function SubWeather() {
     }
   };
 
+  console.log("isLoading sub weather", isLoading);
+
   return (
     <>
       <div className="sub-container" ref={scrollContainerRef}>
         <div className="sub-weather-container" id="subWeatherContainer">
-          {forecastWeather &&
+          {isLoading ? (
+            <div className="sub-weather-loading-container">
+              {[...Array(10)].map((_, i) => (
+                <LoadingCard key={i} type="sub" />
+              ))}
+            </div>
+          ) : (
+            forecastWeather &&
             forecastWeather.map((weatherData) => {
               // console.log("data", weatherData);
 
@@ -82,7 +94,8 @@ export default function SubWeather() {
                   </Card>
                 );
               });
-            })}
+            })
+          )}
         </div>
       </div>
       <div className="sub-weather-button-container">

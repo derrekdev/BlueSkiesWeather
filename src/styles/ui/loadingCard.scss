@@ -1,6 +1,6 @@
 .loading-card {
   &.main {
-    height: 200px;
+    height: 300px;
     width: 250px;
     border-radius: 20px;
 
@@ -33,5 +33,11 @@
         width: 80%;
       }
     }
+  }
+
+  &.sub {
+    width: 100px;
+    height: 150px;
+    border-radius: 20px;
   }
 }

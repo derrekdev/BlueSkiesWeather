@@ -9,6 +9,14 @@
     gap: 10px;
     overflow: visible;
 
+    .sub-weather-loading-container {
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
     .min-card {
       width: 100px;
       height: 150px;
