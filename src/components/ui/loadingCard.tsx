@@ -1,5 +1,6 @@
 import "../../styles/ui/loadingCard.scss";
 import Card from "./card";
+import LoadingCirlcleIcon from "./icons/LoadingCirlcleIcon";
 
 export default function LoadingCard({
   type = "main",
@@ -8,15 +9,20 @@ export default function LoadingCard({
   type?: "main" | "sub";
   className?: string;
 }) {
+  const isMain = type === "main";
+
   return (
     <Card
-      className={`loading-card ${type === "main" ? "main" : "sub"} ${
-        className ?? ""
-      }`}
+      className={`loading-card ${isMain ? "main" : "sub"} ${className ?? ""}`}
     >
-      <div className="loading-text top"></div>
-      <div className="loading-text content" />
-      <div className="loading-text bottom" />
+      <div className="loading-block content">
+        <LoadingCirlcleIcon
+          width={isMain ? 120 : 50}
+          height={isMain ? 120 : 50}
+          className={"loading-spin"}
+        />
+      </div>
+      <div className="loading-block bottom">BlueSkiesWeather</div>
     </Card>
   );
 }

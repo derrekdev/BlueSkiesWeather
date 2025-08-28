@@ -7,4 +7,5 @@ export type SvgIconTypes = {
   strokeWidth?: number | string;
   strokeLinecap?: "butt" | "round" | "square";
   strokeLinejoin?: "miter" | "round" | "bevel";
+  className?: string;
 };

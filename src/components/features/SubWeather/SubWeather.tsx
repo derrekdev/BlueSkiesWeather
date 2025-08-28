@@ -53,7 +53,7 @@ export default function SubWeather() {
         <div className="sub-weather-container" id="subWeatherContainer">
           {isLoading ? (
             <div className="sub-weather-loading-container">
-              {[...Array(10)].map((_, i) => (
+              {[...Array(20)].map((_, i) => (
                 <LoadingCard key={i} type="sub" />
               ))}
             </div>

@@ -1,36 +1,48 @@
+@import "../animate/mixin.scss";
+
 .loading-card {
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-content {
+    .content {
+      flex-basis: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .loading-spin {
+        @include loadingSpin();
+      }
+    }
+  }
+
   &.main {
     height: 300px;
-    width: 250px;
+    width: 320px;
     border-radius: 20px;
 
     .card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       gap: 20px;
+      padding: 0 10px;
     }
 
-    .loading-text {
-      background-color: var(--primary-text-color);
-      border-radius: 10px;
-      opacity: 50%;
-
-      &.top {
-        height: 32px;
-        width: 100%;
-        font-size: 3rem;
-      }
-
+    .loading-block {
       &.content {
-        height: 75px;
+        height: 150px;
         width: 50%;
       }
 
       &.bottom {
+        // background-color: var(--primary-text-color);
+        // border-radius: 10px;
+        // opacity: 50%;
         height: 20px;
         width: 80%;
+        font-size: 2rem;
       }
     }
   }
@@ -39,5 +51,21 @@
     width: 100px;
     height: 150px;
     border-radius: 20px;
+
+    .card-content {
+      gap: 20px;
+      padding: 0;
+    }
+
+    .loading-block {
+      &.bottom {
+        background-color: var(--primary-text-color);
+        border-radius: 10px;
+        opacity: 50%;
+        height: 20px;
+        width: 80px;
+        // font-size: 2rem;
+      }
+    }
   }
 }

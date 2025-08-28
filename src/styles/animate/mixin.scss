@@ -1,0 +1,20 @@
+@mixin loadingSpin(
+  $animateName: spin,
+  $duration: 2s,
+  $timing: linear,
+  $iteration: infinite
+) {
+  animation-name: $animateName;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-iteration-count: $iteration;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
