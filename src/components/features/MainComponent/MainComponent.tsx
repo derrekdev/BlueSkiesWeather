@@ -41,24 +41,24 @@ export default function MainComponent() {
   const fetchWeatherData = useCallback(() => {
     openLoad();
     // for loading test
-    // setTimeout(() => {
-    getWeatherData()
-      // .then(() => {
-      //   openLoad();
-      // })
-      .then((data: WeatherApiResponseType) => {
-        addWeatherData(data);
+    setTimeout(() => {
+      getWeatherData()
+        // .then(() => {
+        //   openLoad();
+        // })
+        .then((data: WeatherApiResponseType) => {
+          addWeatherData(data);
 
-        // console.log("weather data", data);
-      })
-      .catch((error) => {
-        console.log("error", (error as Error).message);
-      })
-      .finally(() => {
-        closeLoad();
-      });
-    // for loading test
-    // }, 5000);
+          // console.log("weather data", data);
+        })
+        .catch((error) => {
+          console.log("error", (error as Error).message);
+        })
+        .finally(() => {
+          closeLoad();
+        });
+      // for loading test
+    }, 50000);
   }, []);
 
   fetchWeatherData();
