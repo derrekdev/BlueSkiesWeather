@@ -28,6 +28,11 @@ export default function Search() {
         <button type="submit">
           <SearchIcon strokeWidth={1} width={20} height={20} />
         </button>
+        <div className="search-list">
+          <div className="search-list-item">London</div>
+          <div className="search-list-item">London2</div>
+          <div className="search-list-item">London3</div>
+        </div>
       </form>
     </div>
   );
