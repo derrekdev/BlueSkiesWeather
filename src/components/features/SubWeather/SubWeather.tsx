@@ -45,8 +45,6 @@ export default function SubWeather() {
     }
   };
 
-  console.log("isLoading sub weather", isLoading);
-
   return (
     <>
       <div className="sub-container" ref={scrollContainerRef}>

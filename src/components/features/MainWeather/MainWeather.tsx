@@ -54,7 +54,7 @@ export default function MainWeather() {
   //   console.log("lat effect", lat);
   // }, []);
 
-  console.log("getCurrentWeather", weatherData);
+  // console.log("getCurrentWeather", weatherData);
 
   return (
     <>

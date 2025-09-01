@@ -11,8 +11,6 @@ export const apiWeather = () => {
         ? locationValue ?? DEFAULT_LOCATION
         : DEFAULT_LOCATION;
 
-    console.log("location", location);
-
     return fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=32a55bd6f3a34377bb074242250808&q=${location}&days=1&aqi=no&alerts=no`
     ).then((response) => {
@@ -20,7 +18,16 @@ export const apiWeather = () => {
     });
   };
 
+  const getLocationData = async (locationValue: string) => {
+    return fetch(
+      `http://api.weatherapi.com/v1/search.json?key=32a55bd6f3a34377bb074242250808&q=${locationValue}`
+    ).then((response) => {
+      return response.json();
+    });
+  };
+
   return {
     getWeatherData,
+    getLocationData,
   };
 };
