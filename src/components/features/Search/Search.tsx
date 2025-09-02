@@ -41,6 +41,8 @@ export default function Search() {
         .catch((error) => {
           console.log("error", (error as Error).message);
         });
+    } else {
+      setLocationList([]);
     }
   }, [searchValue]);
 
