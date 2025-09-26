@@ -2,14 +2,11 @@ import { format } from "date-fns";
 import { useLoading } from "../../../store/storeLoading";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/mainWeather.scss";
-import type { WeatherApiResponseType } from "../../../types/weather";
 import Card from "../../ui/card";
 import LoadingCard from "../../ui/loadingCard";
 
 export default function MainWeather() {
-  const weatherData: WeatherApiResponseType = useWeatherData(
-    (state) => state.weatherData
-  );
+  const weatherData = useWeatherData((state) => state.weatherData);
   const isLoading = useLoading((state) => state.isLoading);
 
   const currentWeather = weatherData.current;
@@ -54,7 +51,7 @@ export default function MainWeather() {
   //   console.log("lat effect", lat);
   // }, []);
 
-  // console.log("getCurrentWeather", weatherData);
+  console.log("getCurrentWeather", weatherData);
 
   return (
     <>

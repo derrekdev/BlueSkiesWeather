@@ -4,6 +4,7 @@ export type WeatherDataType = {
   weatherData: WeatherApiResponseType | unknown | any;
   addWeatherData: (weatherDataValue: WeatherApiResponseType) => void;
   getCurrentWeather: () => Partial<CurrentType>;
+  getCurrentTheme: () => string | unknown;
 };
 
 export type LoadingType = {
