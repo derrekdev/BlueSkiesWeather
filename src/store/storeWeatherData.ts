@@ -22,12 +22,5 @@ export const useWeatherData = create<WeatherDataType>((set, get) => ({
       default:
         return "root";
     }
-
-    return get().weatherData || "";
-    // set((state) => {
-    //   // sdfdsf
-    //   // const currentPhrase = state.weatherData?.current.condition.text;
-
-    // }),
   },
 }));
