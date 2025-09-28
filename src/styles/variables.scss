@@ -14,9 +14,9 @@ $neutralColor: #00a9ff;
 // 468A9A
 // EEEEEE
 $nightPrimaryColor: #0f0e0e;
-$nightSecondaryNightColor: #541212;
-$nightAccentNightColor: #468a9a;
-$nightNeutralNightColor: #eeeeee;
+$nightSecondaryColor: #541212;
+$nightAccentColor: #468a9a;
+$nightNeutralColor: #eeeeee;
 
 //rain
 // 77BEF0
@@ -24,9 +24,24 @@ $nightNeutralNightColor: #eeeeee;
 // FF894F
 // EA5B6F
 $rainPrimaryColor: #77bef0;
-$rainSecondaryNightColor: #ffcb61;
-$rainAccentNightColor: #ff894f;
-$rainNeutralNightColor: #ea5b6f;
+$rainSecondaryColor: #ffcb61;
+$rainAccentColor: #ff894f;
+$rainNeutralColor: #ea5b6f;
+
+// cloudy
+// 9FB3DF
+// 9EC6F3
+// BDDDE4
+// FFF1D5
+$cloudyPrimaryColor: #f2efe5;
+$cloudySecondaryColor: #e3e1d9;
+$cloudyAccentColor: #c7c8cc;
+$cloudyNeutralColor: #b4b4b8;
+
+// f1efec
+// d4c9be
+// 123458
+// 030303
 
 // c6e7ff
 // d4f6ff
@@ -58,4 +73,21 @@ $rainNeutralNightColor: #ea5b6f;
   --search-button-border-color: #{$secondaryColor};
   --button-color: #{$secondaryColor};
   --button-color-hover: #{$primaryColor};
+}
+
+.cloudy {
+  --main-background-color: #{$cloudyNeutralColor};
+  --card-background-color: #{$cloudyPrimaryColor};
+  --card-header-background-color: #{$cloudySecondaryColor};
+  --card-header-secondary-background-color: #{$cloudyAccentColor};
+  --card-header-secondary-text-color: #{$cloudyNeutralColor};
+  --primary-text-color: #{$cloudyAccentColor};
+  --secondary-text-color: #{$cloudySecondaryColor};
+  --search-input-background-color: #{$cloudyAccentColor};
+  --search-button-background-color: #{$cloudySecondaryColor};
+  --search-button-background-color-hover: #{$cloudyAccentColor};
+  --search-button-text-color: #{$cloudyNeutralColor};
+  --search-button-border-color: #{$cloudySecondaryColor};
+  --button-color: #{$cloudySecondaryColor};
+  --button-color-hover: #{$cloudyPrimaryColor};
 }

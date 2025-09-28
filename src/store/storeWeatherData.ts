@@ -19,6 +19,9 @@ export const useWeatherData = create<WeatherDataType>((set, get) => ({
     const currentPhrase = get().weatherData?.current?.condition?.text ?? "";
 
     switch (currentPhrase) {
+      case "Partly cloudy":
+        return "cloudy";
+
       default:
         return "root";
     }
