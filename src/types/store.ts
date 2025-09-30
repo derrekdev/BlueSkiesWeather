@@ -2,9 +2,12 @@ import type { CurrentType, WeatherApiResponseType } from "./weather";
 
 export type WeatherDataType = {
   weatherData: WeatherApiResponseType | unknown | any;
+  currentTheme: string;
+  currentLocation: string;
   addWeatherData: (weatherDataValue: WeatherApiResponseType) => void;
   getCurrentWeather: () => Partial<CurrentType>;
   getCurrentTheme: () => string | unknown;
+  setCurrentLocation: (weatherLocation: string) => void;
 };
 
 export type LoadingType = {

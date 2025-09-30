@@ -4,11 +4,28 @@ import type { WeatherApiResponseType } from "../types/weather";
 
 export const useWeatherData = create<WeatherDataType>((set, get) => ({
   weatherData: { location: {}, current: [], forecast: [] },
+  currentTheme: "",
+  currentLocation: "",
   // weatherData: [],
   addWeatherData: (weatherDataValue: WeatherApiResponseType) =>
-    set(() => ({
+    //  {
+    //     const currentPhrase = get().weatherData?.current?.condition?.text ?? "";
+    //     let themeString = '';
+
+    //     switch (currentPhrase.toLowerCase()) {
+    //       case "partly cloudy":
+    //         themeString =  "cloudy";
+
+    //         break;
+    //       default:
+    //         themeString =   "root";
+    //         break;
+    //   }
+    set((state) => ({
       weatherData: weatherDataValue,
+      currentTheme: state.weatherData?.current?.condition?.text,
     })),
+  //  },
 
   getCurrentWeather: async () =>
     set((state) => {
@@ -18,12 +35,17 @@ export const useWeatherData = create<WeatherDataType>((set, get) => ({
   getCurrentTheme: () => {
     const currentPhrase = get().weatherData?.current?.condition?.text ?? "";
 
-    switch (currentPhrase) {
-      case "Partly cloudy":
+    switch (currentPhrase.toLowerCase()) {
+      case "partly cloudy":
+      case "fog":
         return "cloudy";
 
       default:
-        return "root";
+        return "default";
     }
   },
+  setCurrentLocation: (weatherLocation: string) =>
+    set(() => ({
+      currentLocation: weatherLocation,
+    })),
 }));
