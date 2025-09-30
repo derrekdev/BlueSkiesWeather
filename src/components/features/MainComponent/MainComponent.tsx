@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useEffect } from "react";
 import { apiWeather } from "../../../services/apiWeather";
 import { useLoading } from "../../../store/storeLoading";
 import { useWeatherData } from "../../../store/storeWeatherData";
@@ -11,8 +11,8 @@ export default function MainComponent() {
   const addWeatherData = useWeatherData((state) => state.addWeatherData);
   const openLoad = useLoading((state) => state.openLoad);
   const closeLoad = useLoading((state) => state.closeLoad);
-  // const loadingStatus = useLoading((state) => state.loadingStatus);
   const { getWeatherData } = apiWeather();
+  const currentLocation = useWeatherData((state) => state.currentLocation);
 
   // const fetchWeatherData = useCallback(async () => {
   //   fetch(
@@ -38,30 +38,30 @@ export default function MainComponent() {
   //   }
   // }, []);
 
-  const fetchWeatherData = useCallback(() => {
-    openLoad();
-    // for loading test
-    // setTimeout(() => {
-    getWeatherData()
-      // .then(() => {
-      //   openLoad();
-      // })
-      .then((data: WeatherApiResponseType) => {
-        addWeatherData(data);
+  // const fetchWeatherData = useCallback(() => {
+  //   openLoad();
+  //   // for loading test
+  //   // setTimeout(() => {
+  //   getWeatherData(currentLocation)
+  //     // .then(() => {
+  //     //   openLoad();
+  //     // })
+  //     .then((data: WeatherApiResponseType) => {
+  //       addWeatherData(data);
 
-        // console.log("weather data", data);
-      })
-      .catch((error) => {
-        console.log("error", (error as Error).message);
-      })
-      .finally(() => {
-        closeLoad();
-      });
-    // for loading test
-    // }, 50000);
-  }, []);
+  //       // console.log("weather data", data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error", (error as Error).message);
+  //     })
+  //     .finally(() => {
+  //       closeLoad();
+  //     });
+  //   // for loading test
+  //   // }, 50000);
+  // }, []);
 
-  fetchWeatherData();
+  // fetchWeatherData();
 
   // useEffect(() => {
   //   fetch(
@@ -75,7 +75,22 @@ export default function MainComponent() {
   //     });
   // }, []);
 
-  // console.log("isLoading", loadingStatus());
+  useEffect(() => {
+    openLoad();
+    getWeatherData(currentLocation)
+      .then((data: WeatherApiResponseType) => {
+        addWeatherData(data);
+      })
+      .catch((error) => {
+        console.log("error", (error as Error).message);
+      })
+      .finally(() => {
+        closeLoad();
+      });
+  }, [currentLocation]);
+
+  openLoad();
+
   return (
     <main>
       <div className="current-container">

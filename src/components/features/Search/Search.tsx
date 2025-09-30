@@ -3,15 +3,16 @@ import { apiWeather } from "../../../services/apiWeather";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/search.scss";
 import type { LocationListType } from "../../../types/location";
-import type { WeatherApiResponseType } from "../../../types/weather";
 import SearchIcon from "../../ui/icons/SearchIcon";
 
 export default function Search() {
   const refSearchValue = useRef<HTMLInputElement>(null);
   const [searchValue, setSearchValue] = useState<string>();
   const [locationList, setLocationList] = useState<LocationListType | null>([]);
-  const addWeatherData = useWeatherData((state) => state.addWeatherData);
-  const { getWeatherData, getLocationData } = apiWeather();
+  const setCurrentLocation = useWeatherData(
+    (state) => state.setCurrentLocation
+  );
+  const { getLocationData } = apiWeather();
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
@@ -22,13 +23,7 @@ export default function Search() {
   const handleSearchLocation = (location: string | undefined) => {
     setLocationList([]);
     refSearchValue.current?.value == location;
-    getWeatherData(location)
-      .then((data: WeatherApiResponseType) => {
-        addWeatherData(data);
-      })
-      .catch((error) => {
-        console.log("error", (error as Error).message);
-      });
+    setCurrentLocation(location!);
   };
 
   useEffect(() => {
@@ -54,7 +49,6 @@ export default function Search() {
           type="search"
           ref={refSearchValue}
           onChange={(event) => setSearchValue(event.target.value)}
-          // value={searchValue}
         />
         <button type="submit">
           <SearchIcon strokeWidth={1} width={20} height={20} />

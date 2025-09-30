@@ -6,10 +6,12 @@ import { useWeatherData } from "../store/storeWeatherData";
 export default function Home() {
   const isTheme = useWeatherData((state) => state.getCurrentTheme());
   return (
-    <div className={`container ${isTheme}`}>
-      <Header />
-      <MainComponent />
-      <Footer />
-    </div>
+    <>
+      <div className={`container ${isTheme}`}>
+        <Header />
+        <MainComponent />
+        <Footer />
+      </div>
+    </>
   );
 }
