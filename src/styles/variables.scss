@@ -23,10 +23,26 @@ $nightNeutralColor: #eeeeee;
 // FFCB61
 // FF894F
 // EA5B6F
-$rainPrimaryColor: #77bef0;
-$rainSecondaryColor: #ffcb61;
-$rainAccentColor: #ff894f;
-$rainNeutralColor: #ea5b6f;
+
+// 134686
+// ED3F27
+// FEB21A
+// FDF4E3
+
+// #E2B493
+// #D8D297
+// #AFCFDA
+// #8C7B73
+
+// 6d7178
+// 7d8287
+// a4bec3
+// 7d9fb0
+
+$rainPrimaryColor: #7d9fb0;
+$rainSecondaryColor: #a4bec3;
+$rainAccentColor: #7d8287;
+$rainNeutralColor: #6d7178;
 
 // cloudy
 // 9FB3DF
@@ -90,4 +106,21 @@ $cloudyNeutralColor: #b4b4b8;
   --search-button-border-color: #{$cloudySecondaryColor};
   --button-color: #{$cloudySecondaryColor};
   --button-color-hover: #{$cloudyPrimaryColor};
+}
+
+.rain {
+  --main-background-color: #{$rainNeutralColor};
+  --card-background-color: #{$rainPrimaryColor};
+  --card-header-background-color: #{$rainSecondaryColor};
+  --card-header-secondary-background-color: #{$rainAccentColor};
+  --card-header-secondary-text-color: #{$rainNeutralColor};
+  --primary-text-color: #{$rainAccentColor};
+  --secondary-text-color: #{$rainSecondaryColor};
+  --search-input-background-color: #{$rainAccentColor};
+  --search-button-background-color: #{$rainSecondaryColor};
+  --search-button-background-color-hover: #{$rainAccentColor};
+  --search-button-text-color: #{$rainNeutralColor};
+  --search-button-border-color: #{$rainSecondaryColor};
+  --button-color: #{$rainSecondaryColor};
+  --button-color-hover: #{$rainPrimaryColor};
 }

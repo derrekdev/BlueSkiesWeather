@@ -20,7 +20,11 @@ export const useWeatherData = create<WeatherDataType>((set, get) => ({
     switch (currentPhrase.toLowerCase()) {
       case "partly cloudy":
       case "fog":
+      case "mist":
         return "cloudy";
+
+      case "light rain shower":
+        return "rain";
 
       default:
         return "default";
