@@ -91,6 +91,23 @@ $cloudyNeutralColor: #b4b4b8;
   --button-color-hover: #{$primaryColor};
 }
 
+.night {
+  --main-background-color: #{$nightNeutralColor};
+  --card-background-color: #{$nightPrimaryColor};
+  --card-header-background-color: #{$nightSecondaryColor};
+  --card-header-secondary-background-color: #{$nightAccentColor};
+  --card-header-secondary-text-color: #{$nightNeutralColor};
+  --primary-text-color: #{$nightAccentColor};
+  --secondary-text-color: #{$nightSecondaryColor};
+  --search-input-background-color: #{$nightAccentColor};
+  --search-button-background-color: #{$nightSecondaryColor};
+  --search-button-background-color-hover: #{$nightAccentColor};
+  --search-button-text-color: #{$nightNeutralColor};
+  --search-button-border-color: #{$nightSecondaryColor};
+  --button-color: #{$nightSecondaryColor};
+  --button-color-hover: #{$nightPrimaryColor};
+}
+
 .cloudy {
   --main-background-color: #{$cloudyNeutralColor};
   --card-background-color: #{$cloudyPrimaryColor};
