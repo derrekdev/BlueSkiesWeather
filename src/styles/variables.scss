@@ -54,6 +54,16 @@ $cloudySecondaryColor: #e3e1d9;
 $cloudyAccentColor: #c7c8cc;
 $cloudyNeutralColor: #b4b4b8;
 
+//snow
+// F8FAFC
+// D9EAFD
+// BCCCDC
+// 9AA6B2
+$snowPrimaryColor: #9aa6b2;
+$snowSecondaryColor: #d9eafd;
+$snowAccentColor: #bcccdc;
+$snowNeutralColor: #f8fafc;
+
 // f1efec
 // d4c9be
 // 123458
@@ -140,4 +150,21 @@ $cloudyNeutralColor: #b4b4b8;
   --search-button-border-color: #{$rainSecondaryColor};
   --button-color: #{$rainSecondaryColor};
   --button-color-hover: #{$rainPrimaryColor};
+}
+
+.snow {
+  --main-background-color: #{$snowNeutralColor};
+  --card-background-color: #{$snowPrimaryColor};
+  --card-header-background-color: #{$snowSecondaryColor};
+  --card-header-secondary-background-color: #{$snowAccentColor};
+  --card-header-secondary-text-color: #{$snowNeutralColor};
+  --primary-text-color: #{$snowAccentColor};
+  --secondary-text-color: #{$snowSecondaryColor};
+  --search-input-background-color: #{$snowAccentColor};
+  --search-button-background-color: #{$snowSecondaryColor};
+  --search-button-background-color-hover: #{$snowAccentColor};
+  --search-button-text-color: #{$snowNeutralColor};
+  --search-button-border-color: #{$snowSecondaryColor};
+  --button-color: #{$snowSecondaryColor};
+  --button-color-hover: #{$snowPrimaryColor};
 }
