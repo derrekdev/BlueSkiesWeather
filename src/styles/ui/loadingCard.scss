@@ -1,4 +1,4 @@
-@import "../animate/mixin.scss";
+@use "../animate/mixin.scss" as mixin;
 
 .loading-card {
   .card-content {
@@ -15,7 +15,7 @@
       align-items: center;
 
       .loading-spin {
-        @include loadingSpin();
+        @include mixin.loadingSpin();
       }
     }
   }
