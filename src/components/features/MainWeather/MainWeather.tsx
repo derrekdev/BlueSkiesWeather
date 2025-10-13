@@ -2,7 +2,9 @@ import { format } from "date-fns";
 import { useLoading } from "../../../store/storeLoading";
 import { useWeatherData } from "../../../store/storeWeatherData";
 import "../../../styles/features/mainWeather.scss";
+import Button from "../../ui/button";
 import Card from "../../ui/card";
+import Ellipisis from "../../ui/icons/Ellipisis";
 import LoadingCard from "../../ui/loadingCard";
 
 export default function MainWeather() {
@@ -71,7 +73,14 @@ export default function MainWeather() {
               {format(new Date(locationWeather.localtime), "hh:mm a")}
             </span>
           </div>
-          <Card className="main-weather-card">
+          <Card
+            className="main-weather-card"
+            footer={
+              <Button>
+                <Ellipisis />
+              </Button>
+            }
+          >
             <div className="weather-block">
               {locationWeather.name && (
                 <span className="location">{locationWeather.name}</span>

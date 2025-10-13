@@ -3,7 +3,7 @@
   background-color: var(--card-background-color);
   display: grid;
   grid-template-areas: "CardHeader" "CardContent" "CardFooter";
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-rows: 0.5fr 5fr 1fr;
   grid-template-columns: auto;
   box-sizing: content-box;
   overflow: hidden;
@@ -21,6 +21,7 @@
 
   .card-footer {
     grid-area: CardFooter;
-    padding: 20px 30px;
+    padding: 0px 30px 10px 30px;
+    text-align: right;
   }
 }

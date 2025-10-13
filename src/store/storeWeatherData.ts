@@ -46,9 +46,11 @@ export const useWeatherData = create<WeatherDataType>((set, get) => ({
 
     // console.log("isDay", isDay);
     // return isDay ? "default" : "night";
+    return "default";
 
     switch (currentPhrase.toLowerCase()) {
       case "partly cloudy":
+      case "overcast":
       case "fog":
       case "mist":
         return "cloudy";
