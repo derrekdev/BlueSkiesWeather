@@ -23,5 +23,15 @@
     grid-area: CardFooter;
     padding: 0px 30px 10px 30px;
     text-align: right;
+
+    button {
+      border-radius: 50px;
+      background-color: transparent;
+      color: var(--button-color);
+      // padding: 2px;
+      border-radius: 20px;
+      border-color: var(--search-button-border-color);
+      border-style: solid;
+    }
   }
 }
